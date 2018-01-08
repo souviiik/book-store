@@ -25,7 +25,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // Mongo Connect
 var BooksMongoClient = require('mongodb').MongoClient;
 var books = require("./modules/books")(app, BooksMongoClient);
+var port = 3000;
 
-app.listen(3000, function(){
-    console.log("Server is running");
+app.listen(port, function(){
+    console.log("Server is running on port " + port);
 });
