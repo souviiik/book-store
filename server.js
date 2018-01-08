@@ -29,7 +29,3 @@ var books = require("./modules/books")(app, BooksMongoClient);
 app.listen(3000, function(){
     console.log("Server is running");
 });
-
-/**
- * npm install express path morgan cookie-parser body-parser http https url fs --save
- */
