@@ -3,7 +3,9 @@
 */
 
 module.exports = function(app, BooksHostConnect){
-    BooksHostConnect.connect('mongodb://localhost:27017/books', function(err, db){
+    BooksHostConnect.connect('mongodb://localhost:27017', function(err, client){
+        var db = client.db('books');
+        
         app.get('/book', function(req, res){
             db.collection('books').find().toArray(function(err, books){
                 if(err){
