@@ -41,7 +41,7 @@ module.exports = function(app, BooksHostConnect){
                 if(err){
                     console.log(err);
                 } else {
-                    if(books.value !== nul) {
+                    if(books.value !== null) {
                         res.json('Book with isbn ' + books.value.isbn + ' successfully removed');
                     } else {
                         res.status(400).send('Book with this isbn ' + books.value.isbn + ' not available');
